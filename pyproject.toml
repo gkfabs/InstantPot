@@ -1,0 +1,19 @@
+[build-system]
+requires = ["setuptools>=68"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "instantpot-local"
+version = "0.1.0"
+description = "Cloud-free local control for the 2018 Instant Pot Smart WiFi"
+requires-python = ">=3.10"
+dependencies = ["cryptography>=41"]
+
+[project.optional-dependencies]
+legacy = ["midea-local", "pycryptodome", "scapy", "websocket-client"]
+
+[project.scripts]
+instantpot-local = "instantpot_local.cli:main"
+
+[tool.setuptools]
+packages = ["instantpot_local"]

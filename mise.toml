@@ -1,0 +1,24 @@
+min_version = "2024.9.5"
+
+[tools]
+python = "3.13"
+uv = "0.12.3"
+
+[tasks.sync]
+description = "Create the project environment and install runtime dependencies"
+run = "uv sync"
+
+[tasks.sync-legacy]
+description = "Install dependencies for the archived investigation scripts"
+run = "uv sync --extra legacy"
+
+[tasks.instantpot]
+description = "Run the cloud-free Instant Pot CLI"
+run = "uv run instantpot-local"
+
+[tasks.test]
+description = "Run the protocol tests and the SST self-test"
+run = """
+uv run python -m unittest discover -v
+uv run instantpot-local self-test
+"""

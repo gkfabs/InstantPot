@@ -1,0 +1,29 @@
+# Python environments and generated files
+.venv/
+__pycache__/
+*.py[cod]
+*.egg-info/
+build/
+dist/
+
+# Test and analysis caches
+.coverage
+.pytest_cache/
+.mypy_cache/
+.ruff_cache/
+htmlcov/
+
+# Local mise overrides
+.mise.local.toml
+
+# Local network captures and logs
+*.log
+*.pcap
+*.pcapng
+
+# Android installation output
+*.idsig
+
+# Editor and operating system files
+.DS_Store
+*~
